@@ -3,15 +3,14 @@ from flask_bcrypt import check_password_hash
 from flask_login import (LoginManager, login_user, logout_user,
                          login_required, current_user)
 
+import os
 import forms
 import models
 
-DEBUG = True
-PORT = PORT
-HOST = '0.0.0.0'
 
 app = Flask(__name__)
 app.secret_key = 'auoesh.bouoastuh.43,uoausoehuosth3ououea.auoub!'
+app.config['SECRET_KEY'] = '';
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -174,4 +173,4 @@ if __name__ == '__main__':
         )
     except ValueError:
         pass
-    app.run(debug=DEBUG, host=HOST, port=PORT)
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
