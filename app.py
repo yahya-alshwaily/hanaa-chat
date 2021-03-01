@@ -10,7 +10,7 @@ import models
 
 app = Flask(__name__)
 app.secret_key = 'auoesh.bouoastuh.43,uoausoehuosth3ououea.auoub!'
-app.config['SECRET_KEY'] = '';
+app.config['SECRET_KEY'] = 'auoesh.bouoastuh.43,uoausoehuosth3ououea.auoub!'
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -173,4 +173,4 @@ if __name__ == '__main__':
         )
     except ValueError:
         pass
-    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    app.run(debug=False, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
